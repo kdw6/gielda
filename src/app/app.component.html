@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+   {{title}}
+  </h1>
+  <p>Spółka {{ccc.name}} cena <input [(ngModel)]="ccc.cena" placeholder="cena"> </p>
+  <p>{{ccc.cena}}</p>
+  <h2>Spółki</h2>
+  <ul class="spolki">
+    <li *ngFor="let spolka of spolki">
+      <span class="badge">{{spolka.id}}</span>{{spolka.name}}
+    </li>
+
+  </ul>
+</div>
