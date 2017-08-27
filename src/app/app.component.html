@@ -6,10 +6,41 @@
   <p>Spółka {{ccc.name}} cena <input [(ngModel)]="ccc.cena" placeholder="cena"> </p>
   <p>{{ccc.cena}}</p>
   <h2>Spółki giełdowe</h2>
-  <ul class="spolki">
-    <li *ngFor="let spolka of spolki">
-      <span class="badge">{{spolka.id}}</span>{{spolka.name}}
-    </li>
 
-  </ul>
+  <table class="spolki">
+    <tr>
+      <th>Id</th>
+      <th>Nazwa</th>
+      <th>Cena</th>
+    </tr>
+    <tr *ngFor="let spolka of spolki">
+      <td>{{spolka.id}}</td>
+      <td width=150 align=left>{{spolka.name}}</td>
+      <td>{{spolka.cena}}</td>
+    </tr>
+  </table>
+
+  <br>
+
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>IdSpolki</th>
+      <th>Data</th>
+      <th>Cena</th>
+      <th>Ilość</th>
+      <th>Wartość</th>
+      <th>Prowizja</th>
+    </tr>
+    <tr *ngFor="let transakcja of transakcje">
+      <td>{{transakcja.id}}</td>
+      <td>{{transakcja.idSpolka}}</td>
+      <td>{{transakcja.data}}</td>
+      <td>{{transakcja.cenaZak}}</td>
+      <td>{{transakcja.ilosc}}</td>
+      <td>{{transakcja.ilosc*transakcja.cenaZak}}</td>
+      <td>{{transakcja.prowizja}}</td>
+    </tr>
+  </table>
+
 </div>
